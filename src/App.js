@@ -7,6 +7,8 @@ const App = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+
+    console.log({env: process.env})
     fetch(API_URL)
       .then((response) => {
         if (!response.ok) {
