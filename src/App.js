@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import {} from 'dotenv'
 const API_URL = process.env.REACT_APP_API_URL;
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -9,6 +9,11 @@ const App = () => {
   useEffect(() => {
 
     console.log({env: process.env.REACT_APP_API_URL})
+
+    if (!process.env.REACT_APP_API_URL) {
+      alert('Missing env')
+      return
+    }
     fetch(API_URL)
       .then((response) => {
         if (!response.ok) {
