@@ -8,7 +8,7 @@ const App = () => {
 
   useEffect(() => {
 
-    console.log({env: process.env})
+    console.log({env: process.env.REACT_APP_API_URL})
     fetch(API_URL)
       .then((response) => {
         if (!response.ok) {
